@@ -1,0 +1,32 @@
+# Copy to lotus-releases/.github/ISSUE_TEMPLATE/bug.yml.
+# Field ids are prefilled by the app (apps/desktop/src/modules/bug-report/services/bug-report.ts):
+# changing an id here breaks the prefill silently.
+name: Bug report
+description: Something in Lotus did not work.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Lotus version, OS. Filled in by the app.
+      placeholder: Lotus 0.13.0 · macOS 27.0 (aarch64) · release
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. …
+        2. …
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Filled in by the app. Home folder and tokens are already removed; check before you submit.
+      render: text
